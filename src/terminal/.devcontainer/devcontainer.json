@@ -6,7 +6,11 @@
 
 	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
     "features": {
-    "ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {}
+        "ghcr.io/brandonc98/devcontainer-features/man-ubuntu:latest": {},
+        "ghcr.io/devcontainers-extra/features/homebrew-package:1": {},
+        "ghcr.io/devcontainers-extra/features/neovim-homebrew:1": {},
+        "ghcr.io/devcontainers-extra/features/navi:1": {},
+        "ghcr.io/kreemer/features/stow:1": {}
     },
 
 	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
