@@ -1,4 +1,0 @@
-FROM ubuntu:24.04
-
-RUN mkdir -p /usr/local/etc \
-    && echo "Hello Ubuntu" > /usr/local/etc/greeting.txt
