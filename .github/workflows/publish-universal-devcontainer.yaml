@@ -1,0 +1,30 @@
+# .github/workflows/publish-devcontainer.yml
+name: Publish Universal DevContainer
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/universal/.devcontainer/**'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Publish Dev Container Image
+        uses: devcontainers/ci@v0.3
+        with:
+          subFolder: src/universal
+          imageName: ghcr.io/${{ github.repository }}/universal
+          cacheFrom: ghcr.io/${{ github.repository }}/universal
+          push: always
