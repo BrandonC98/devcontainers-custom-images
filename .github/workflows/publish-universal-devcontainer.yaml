@@ -17,6 +17,9 @@ jobs:
       contents: read
       packages: write
 
+    env:
+      REPO: brandonc98/devcontainers-custom-images
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -25,6 +28,6 @@ jobs:
         uses: devcontainers/ci@v0.3
         with:
           subFolder: src/universal
-          imageName: ghcr.io/${{ github.repository }}/universal
-          cacheFrom: ghcr.io/${{ github.repository }}/universal
+          imageName: ghcr.io/${{ env.REPO }}/universal
+          cacheFrom: ghcr.io/${{ env.REPO }}/universal
           push: always
